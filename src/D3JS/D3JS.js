@@ -44,14 +44,14 @@ function D3JS(props) {
   }, [data]);
 
   function drawChart() {
-    // Remove the old svg
-    d3.select('#pie-container')
+    //To remove any old svg present.
+    d3.select('#pie-chart')
       .select('svg')
       .remove();
 
-    // Create new svg
+    // pieChart svg
     const svg = d3
-      .select('#pie-container')
+      .select('#pie-chart')
       .append('svg')
       .attr('width', width)
       .attr('height', height)
@@ -81,7 +81,7 @@ function D3JS(props) {
       .style('stroke', '#36a2eb')
       .style('stroke-width', 0);
 
-    // Append text labels
+    // Append titles of the values
     arc
       .append('text')
       .attr('text-anchor', 'middle')
@@ -94,7 +94,7 @@ function D3JS(props) {
       });
   }    
 
-  return <div id="pie-container" />;
+  return <div id="pie-chart" />;
 }
 
 export default D3JS;
