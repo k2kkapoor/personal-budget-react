@@ -1,8 +1,11 @@
 import React from 'react';
+import ChartJS from '../ChartJS/ChartJS';
+import D3JS from '../D3JS/D3JS';
 
 function HomePage() {
+  
   return (
-    <main id="main" classNameName="container center">
+    <main id="main" className="container center">
       <div className="page-area">
         <div className="text-box">
           <h2>Stay on track</h2>
@@ -52,20 +55,27 @@ function HomePage() {
             is to never go over the budget.
           </p>
         </div>
+       
+       
+    </div>
 
-        <div className="chart">
+    <div className="text-box-chart">
           <h2>ChartJS</h2>
-          <p><canvas id="myChart" width="200" height="200"></canvas></p>
+          <ChartJS />
         </div>
-      </div>
 
 
-      <div>
-        <h2>D3JS Chart</h2>
-        <p><div id="d3jsChart"  width="500" height="400"></div></p>
-      </div>
+        <div className="text-box-chart">
+          <h2>D3JS</h2>
+          <D3JS 
+        width={400}
+        height={400}
+        innerRadius={0}
+        outerRadius={200} />
+        </div>
     </main>
   );
 }
+
 
 export default HomePage;
